@@ -16,6 +16,38 @@ All settings can be specified through the command line. It is also possible to s
 
 Full details of the supported options can be found by running the tool with no arguments or by passing in -help.
 
+## Examples
+
+To learn more about installing tools - see https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-tool-install. Specifically, note that you will need to create a manifest:
+
+```
+dotnet new tool-manifest
+```
+
+To install (as a local tool)
+```
+dotnet tool install BorsukSoftware.Conical.Tools.TRXUploader
+```
+
+To update to the latest version
+```
+dotnet tool update BorsukSoftware.Conical.Tools.TRXUploader
+```
+
+
+The following is an example of how to the run tool (after having installed it)
+```
+dotnet tool run BorsukSoftware.Conical.Tools.TRXUploader
+  -server https://demo.conical.cloud 
+  -product "myProduct" 
+  -source "F:\Programming\repo\myProject\unitTestsOutput\output.trx" 
+  -token "thisReallyIsntOurTokenSoDontEvenTryItPlease" 
+  -tag "local" 
+  -tag "example" 
+  -testRunType "Unit Test"
+
+```
+
 ## FAQs
 #### We've found a bug, what do we do?
 Contact us / raise an issue / raise a PR with the fix.
